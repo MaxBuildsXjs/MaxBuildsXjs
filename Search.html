@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - MaxBuildXJ's</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>MaxBuildXJ's</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" id="search-bar" placeholder="Search...">
+                <button onclick="searchSite()">Search</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="content">
+            <h2>Search Results</h2>
+            <p>Your search for "<span id="search-query"></span>" returned the following results:</p>
+            <!-- Dynamically populate search results here -->
+            <ul id="search-results"></ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 MaxBuildXJ's. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const query = urlParams.get('q');
+        document.getElementById('search-query').innerText = query;
+        
+        const searchResults = [
+            { title: "Rebuild Project 1", link: "gallery.html#project1" },
+            { title: "Service Overview", link: "services.html" },
+            { title: "Contact Us", link: "contact.html" },
+        ];
+        
+        const filteredResults = searchResults.filter(result => result.title.toLowerCase().includes(query));
+
+        const resultsContainer = document.getElementById('search-results');
+        if (filteredResults.length > 0) {
+            filteredResults.forEach(result => {
+                const listItem = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = result.link;
+                link.innerText = result.title;
+                listItem.appendChild(link);
+                resultsContainer.appendChild(listItem);
+            });
+        } else 
+            resultsContainer.innerHTML = "<li>No results found.</li>";
+       

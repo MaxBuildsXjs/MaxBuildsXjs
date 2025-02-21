@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - MaxBuildXJ's</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>MaxBuildXJ's</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" id="search-bar" placeholder="Search...">
+                <button onclick="searchSite()">Search</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="content">
+            <h2>Contact Us</h2>
+            <p>We would love to hear from you! Whether you're interested in our services or have any questions, feel free to reach out.</p>
+            <form>
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" placeholder="Your name"><br><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" placeholder="Your email"><br><br>
+
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="5" placeholder="Your message"></textarea><br><br>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 MaxBuildXJ's. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
